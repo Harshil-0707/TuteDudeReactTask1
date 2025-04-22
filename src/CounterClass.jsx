@@ -1,28 +1,16 @@
 import React, { Component } from "react";
+import "./App.css";
 
 class CounterClass extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0,
-    };
-  }
-
-  increment = () => {
-    this.setState({ count: this.state.count + 1 });
-  };
-
-  decrement = () => {
-    this.setState({ count: this.state.count - 1 });
-  };
-
   render() {
+    const { count, increment, decrement } = this.props;
+
     return (
-      <div>
+      <div className="card">
         <h2>Counter (Class Component)</h2>
-        <p>Count: {this.state.count}</p>
-        <button onClick={this.increment}>+</button>
-        <button onClick={this.decrement}>-</button>
+        <p>Count: {count}</p>
+        <button onClick={increment}>+</button>
+        <button onClick={decrement}>-</button>
       </div>
     );
   }

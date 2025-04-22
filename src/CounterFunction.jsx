@@ -1,18 +1,14 @@
-import { useState } from "react";
+import React from "react";
 import "./App.css";
 
-function CounterFunction() {
-  const [count, setCount] = useState(0);
-
+function CounterFunction({ count, increment, decrement }) {
   return (
-    <>
-      <div className="card">
-        <h2>Counter (Function Component)</h2>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
-    </>
+    <div className="card">
+      <h2>Counter (Function Component)</h2>
+      <p>Count: {count}</p>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
+    </div>
   );
 }
 
